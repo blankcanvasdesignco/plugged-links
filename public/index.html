@@ -1,0 +1,21 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+</head>
+<body>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const spaceId = params.get("id");
+
+    // Try opening the app via custom scheme
+    window.location.href = `yourapp://space?id=${spaceId}`;
+
+    // Fallback to App Store after delay
+    setTimeout(() => {
+      window.location.href = "https://apps.apple.com/app/idYOUR_APP_ID";
+    }, 1500);
+  </script>
+</body>
+</html>
