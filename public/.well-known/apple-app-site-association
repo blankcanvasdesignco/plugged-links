@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "4ZZN5ZG5R2.com.plugged.social",
+        "paths": [
+          "/space*",
+          "/"
+        ]
+      }
+    ]
+  }
+}
