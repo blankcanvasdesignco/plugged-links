@@ -1,5 +1,8 @@
 {
-  "rewrites": [{ "source": "/space", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/space", "destination": "/index.html" },
+    { "source": "/profile", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/.well-known/apple-app-site-association",
