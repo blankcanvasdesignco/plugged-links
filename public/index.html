@@ -1,4 +1,3 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,15 +5,26 @@
   </head>
   <body>
     <script>
+      const path = window.location.pathname;
       const params = new URLSearchParams(window.location.search);
-      const spaceId = params.get("id");
 
-      // Try opening the app via custom scheme
-      window.location.href = `yourapp://space?id=${spaceId}`;
+      let fallbackUrl = "https://apps.apple.com/app/id6746377914";
+
+      if (path === "/space") {
+        const spaceId = params.get("id");
+        if (spaceId) {
+          window.location.href = `yourapp://space?id=${spaceId}`;
+        }
+      } else if (path === "/profile") {
+        const userId = params.get("uid");
+        if (userId) {
+          window.location.href = `yourapp://profile?uid=${userId}`;
+        }
+      }
 
       // Fallback to App Store after delay
       setTimeout(() => {
-        window.location.href = "https://apps.apple.com/app/id6746377914";
+        window.location.href = fallbackUrl;
       }, 1500);
     </script>
   </body>
