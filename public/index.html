@@ -12,8 +12,10 @@
 
       if (path === "/space") {
         const spaceId = params.get("id");
-        if (spaceId) {
-          window.location.href = `yourapp://space?id=${spaceId}`;
+        const type = params.get("type"); // music or movie or tvshow or book
+
+        if (spaceId && type) {
+          window.location.href = `yourapp://space/${type}?id=${spaceId}`;
         }
       } else if (path === "/profile") {
         const userId = params.get("uid");
